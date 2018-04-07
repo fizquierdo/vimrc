@@ -30,16 +30,16 @@ Plugin 'L9'
 Plugin 'mattn/emmet-vim'
 let g:user_emmet_leader_key='<C-Z>' " Ctr+Z, to autocomplete tag"
 
-Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
-"" From https://medium.com/@rahul11061995/autocomplete-in-vim-for-js-developer-698c6275e341
-"" Start autocompletion after 4 chars
-let g:ycm_min_num_of_chars_for_completion = 4
-let g:ycm_min_num_identifier_candidate_chars = 4
-let g:ycm_enable_diagnostic_highlighting = 0
-"" Don't show YCM's preview window [ I find it really annoying ]
-set completeopt-=preview
-let g:ycm_add_preview_to_completeopt = 0
-"" see also ~/.tern-config , added to make suggestions better
+"Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+""" From https://medium.com/@rahul11061995/autocomplete-in-vim-for-js-developer-698c6275e341
+""" Start autocompletion after 4 chars
+"let g:ycm_min_num_of_chars_for_completion = 4
+"let g:ycm_min_num_identifier_candidate_chars = 4
+"let g:ycm_enable_diagnostic_highlighting = 0
+""" Don't show YCM's preview window [ I find it really annoying ]
+"set completeopt-=preview
+"let g:ycm_add_preview_to_completeopt = 0
+""" see also ~/.tern-config , added to make suggestions better
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdTree'         "  :help NERD_tree.txt 
@@ -52,6 +52,8 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rails'					
 Plugin 'tpope/vim-ragtag'		" indent HTML files			
 Plugin 'delimitMate.vim' " autoclose parenthesis, brackets, commas
+
+Plugin 'KabbAmine/vCoolor.vim' "color picker
 
 " light color scheme 
 "Plugin 'atelierbram/vim-colors_atelier-schemes'
@@ -77,6 +79,10 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+"
+
+"" Rbuy syntax checking 
+"let g:syntastic_ruby_checkers          = ['rubocop', 'mri']
 
 syntax enable
 
@@ -92,14 +98,22 @@ set wildmenu
 syntax on
 set ruler
 
+"ctags $`brew --prefix`/bin/ctags -R --language=ruby --exclude=.git --exclude=log *
+"navigate with ctrl+]
+set tags=./tags;
+
+",e <some-file> opens on this buffer. ,t on a split window.
+map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+map ,s :split <C-R>=expand("%:p:h") . "/" <CR>
+
 set backspace=indent,eol,start " backspace https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode"
 
 " Indentation
-"set tabstop=2
-"set softtabstop=2
-"set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
