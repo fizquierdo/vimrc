@@ -13,7 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'   " :Ggrep text  # searches for text in all files
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -45,6 +45,10 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdTree'         "  :help NERD_tree.txt 
 Plugin 'scrooloose/syntastic'        " :help syntastic.txt
 Plugin 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_max_files=0
+let g:ctrlp_clear_cache_on_exit = 0  " keep cache after closing, F5 for updating cache
+let g:ctrlp_custom_ignore = 'node_modules\|git'
+
 Plugin 'tpope/vim-surround'	" :help surround.txt
 Plugin 'tpope/vim-repeat'					
 Plugin 'tpope/vim-commentary'	  " visual-mode select + gc				
