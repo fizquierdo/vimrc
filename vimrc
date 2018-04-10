@@ -29,7 +29,7 @@ Plugin 'L9'
 "Plugin 'ascenator/L9', {'name': 'newL9'}
 
 Plugin 'mattn/emmet-vim'
-let g:user_emmet_leader_key='<C-Z>' " Ctr+Z, to autocomplete tag"
+let g:user_emmet_leader_key='<C-Z>' " Ctrl+z+, to autocomplete tag"
 
 "Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 """ From https://medium.com/@rahul11061995/autocomplete-in-vim-for-js-developer-698c6275e341
