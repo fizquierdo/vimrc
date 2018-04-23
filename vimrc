@@ -14,7 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'   " :Ggrep text  # searches for text in all files
+Plugin 'tpope/vim-fugitive'   " :Ggrep text  # searches for text in all files, :copen to split a window with search results
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -43,18 +43,25 @@ let g:user_emmet_leader_key='<C-Z>' " Ctrl+z+, to autocomplete tag"
 """ see also ~/.tern-config , added to make suggestions better
 
 Plugin 'vim-airline/vim-airline'
-Plugin 'scrooloose/nerdTree'         "  :help NERD_tree.txt 
+Plugin 'scrooloose/nerdTree'         "  :help NERD_tree.txt  
+" m #to edit a node in the tree (rename, copy)
+" :vertical res +10 #to expand 10 characters
 Plugin 'scrooloose/syntastic'        " :help syntastic.txt
 Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_max_files=0
 let g:ctrlp_clear_cache_on_exit = 0  " keep cache after closing, F5 for updating cache
 let g:ctrlp_custom_ignore = 'node_modules\|git'
 
+let g:ctrlp_match_window = 'min:4,max:20'
+
 Plugin 'tpope/vim-surround'	" :help surround.txt
 Plugin 'tpope/vim-repeat'					
 Plugin 'tpope/vim-commentary'	  " visual-mode select + gc				
 Plugin 'tpope/vim-endwise'					
 Plugin 'tpope/vim-rails'					
+Plugin 'thoughtbot/vim-rspec' " \t runs the current spec file
+map <Leader>t :call RunCurrentSpecFile()<CR>    
+
 Plugin 'tpope/vim-ragtag'		" indent HTML files			
 Plugin 'delimitMate.vim' " autoclose parenthesis, brackets, commas
 
@@ -87,7 +94,7 @@ filetype plugin indent on    " required
 "
 
 "" Rbuy syntax checking 
-"let g:syntastic_ruby_checkers          = ['rubocop', 'mri']
+let g:syntastic_ruby_checkers          = ['rubocop', 'mri']
 
 syntax enable
 
@@ -112,6 +119,8 @@ map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
 map ,s :split <C-R>=expand("%:p:h") . "/" <CR>
 
 set backspace=indent,eol,start " backspace https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode"
+
+set number
 
 " Indentation
 set tabstop=2
