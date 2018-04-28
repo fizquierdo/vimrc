@@ -42,6 +42,14 @@ let g:user_emmet_leader_key='<C-Z>' " Ctrl+z+, to autocomplete tag"
 "let g:ycm_add_preview_to_completeopt = 0
 """ see also ~/.tern-config , added to make suggestions better
 
+
+" simpler completion triggered with TAB
+Plugin 'ajh17/VimCompletesMe'
+
+" Show explicit indentation
+Plugin 'Yggdroot/indentLine' " :IndentLinesToggle to enable/disable
+let g:indentLine_enabled=0 
+
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdTree'         "  :help NERD_tree.txt  
 " m #to edit a node in the tree (rename, copy)
@@ -76,7 +84,6 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0 " syntax highlight for jsx in js files as well"
 
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -91,7 +98,6 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-"
 
 "" Rbuy syntax checking 
 let g:syntastic_ruby_checkers          = ['rubocop', 'mri']
