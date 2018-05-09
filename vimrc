@@ -73,7 +73,7 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>    
 map <Leader>l :call RunLastSpec()<CR>    
 
-Plugin 'tpope/vim-dispatch' 
+Plugin 'tpope/vim-dispatch'  " :Dispatch rspec %  # within tmux opens failing test in pane 
 
 Plugin 'tpope/vim-ragtag'		" indent HTML files			
 Plugin 'delimitMate.vim' " autoclose parenthesis, brackets, commas
