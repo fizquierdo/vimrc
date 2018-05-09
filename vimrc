@@ -44,7 +44,7 @@ let g:user_emmet_leader_key='<C-Z>' " Ctrl+z+, to autocomplete tag"
 
 
 " simpler completion triggered with TAB
-Plugin 'ajh17/VimCompletesMe'
+"Plugin 'ajh17/VimCompletesMe'
 set complete-=i " avoid scanning for included files"
 
 " Show explicit indentation
