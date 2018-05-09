@@ -126,7 +126,11 @@ map ,s :split <C-R>=expand("%:p:h") . "/" <CR>
 
 set backspace=indent,eol,start " backspace https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode"
 
+" General settings
 set number
+
+" Searc
+set hlsearch
 
 " Indentation
 set tabstop=2
