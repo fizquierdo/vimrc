@@ -100,7 +100,7 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-"" Rbuy syntax checking 
+"" Ruby syntax checking 
 let g:syntastic_ruby_checkers          = ['rubocop', 'mri']
 
 syntax enable
@@ -111,8 +111,6 @@ colorscheme PaperColor
 "colorscheme Atelier_DuneLight
 "let g:airline_theme='Atelier_DuneLight'
 
-set path +=** " tab-completion for searches"
-set wildmenu
 
 syntax on
 set ruler
@@ -121,17 +119,13 @@ set ruler
 "navigate with ctrl+]
 set tags=./tags;
 
-",e <some-file> opens on this buffer. ,t on a split window.
-map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
-map ,s :split <C-R>=expand("%:p:h") . "/" <CR>
-
-set backspace=indent,eol,start " backspace https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode"
-
 " General settings
 set number
-
-" Searc
 set hlsearch
+set path +=** " tab-completion for searches"
+set wildmenu
+set backspace=indent,eol,start " backspace https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode"
+
 
 " Indentation
 set tabstop=2
@@ -142,3 +136,15 @@ autocmd Filetype python setlocal ts=4 sts=4 sw=4
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
+
+" ============= Mappings ================================
+
+"Remappings for navigating splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+",e <some-file> opens on this buffer. ,t on a split window.
+map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+map ,s :split <C-R>=expand("%:p:h") . "/" <CR>
