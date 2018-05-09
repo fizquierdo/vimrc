@@ -68,8 +68,12 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'	  " visual-mode select + gc				
 Plugin 'tpope/vim-endwise'					
 Plugin 'tpope/vim-rails'					
-Plugin 'thoughtbot/vim-rspec' " \t runs the current spec file
+Plugin 'thoughtbot/vim-rspec' 
 map <Leader>t :call RunCurrentSpecFile()<CR>    
+map <Leader>s :call RunNearestSpec()<CR>    
+map <Leader>l :call RunLastSpec()<CR>    
+
+Plugin 'tpope/vim-dispatch' 
 
 Plugin 'tpope/vim-ragtag'		" indent HTML files			
 Plugin 'delimitMate.vim' " autoclose parenthesis, brackets, commas
